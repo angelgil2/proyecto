@@ -14,7 +14,7 @@
             <div class="dropdown">
                 <button class="menu-button" onclick="toggleDropdown()">☰</button>
                 <div class="dropdown-content" id="dropdown-menu">
-                    <a href="mision_vision.html">Mision y Vision</a>
+                    <a href="mision_vision.html">Misión y Visión</a>
                     <a href="cursos.html">Cursos</a>
                     <a href="ubicacion.html">Ubicación</a>
                     <a href="index.html">Cerrar Sesión</a>
@@ -22,16 +22,30 @@
             </div>
         </header>
         <p>Agrega tus productos aquí</p>
+        
+        <!-- Grid de productos -->
         <div class="product-grid">
-            <div class="product-box" onclick="addProduct(this)">+</div>
-            <div class="product-box" onclick="addProduct(this)">+</div>
-            <div class="product-box" onclick="addProduct(this)">+</div>
-            <div class="product-box" onclick="addProduct(this)">+</div>
-            <div class="product-box" onclick="addProduct(this)">+</div>
-            <div class="product-box" onclick="addProduct(this)">+</div>
+            <div class="product-box" onclick="openProductForm(this)">+</div>
+            <div class="product-box" onclick="openProductForm(this)">+</div>
+            <div class="product-box" onclick="openProductForm(this)">+</div>
+            <div class="product-box" onclick="openProductForm(this)">+</div>
+            <div class="product-box" onclick="openProductForm(this)">+</div>
+            <div class="product-box" onclick="openProductForm(this)">+</div>
         </div>
-        <button onclick="uploadProducts()">Subir Producto</button>
+
+        <!-- Formulario emergente para agregar productos -->
+        <div id="productForm" class="product-form">
+            <h2>Agregar Producto</h2>
+            <input type="text" id="productName" placeholder="Nombre del producto" required>
+            <input type="number" id="productPrice" placeholder="Precio del producto" required>
+            <button onclick="saveProduct()">Guardar Producto</button>
+            <button onclick="closeProductForm()">Cancelar</button>
+        </div>
+        
+        <button onclick="uploadProducts()">Subir Productos</button>
     </div>
+
     <script src="script/script.js"></script>
 </body>
 </html>
+        

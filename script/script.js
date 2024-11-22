@@ -14,36 +14,67 @@ function goBack() {
   window.history.back();
 }
 
-// Simular agregar productos en las cajas del menú
-function addProduct(box) {
-  if (box.innerHTML === "+") {
-      box.innerHTML = "✔";
-      box.style.backgroundColor = "#d32f2f";
-      box.style.color = "white";
+// Abre el formulario para agregar un producto
+function openProductForm(productBox) {
+  document.getElementById('productForm').style.display = 'block';
+  // Almacena la referencia al div donde se agregó el producto (para actualizar su contenido)
+  sessionStorage.setItem('currentProductBox', productBox.outerHTML);
+}
+
+// Cierra el formulario sin guardar
+function closeProductForm() {
+  document.getElementById('productForm').style.display = 'none';
+}
+
+// Guarda el producto en el almacenamiento local
+function saveProduct() {
+  const name = document.getElementById('productName').value;
+  const price = document.getElementById('productPrice').value;
+  
+  if (name && price) {
+      // Recupera la referencia del producto donde se añadirá el producto
+      const productBox = sessionStorage.getItem('currentProductBox');
+      
+      if (productBox) {
+          // Reemplaza el div del producto con el nombre y precio
+          const updatedProductBox = productBox.replace('+', `<strong>${name}</strong><br>$${price}`);
+          
+          // Actualiza la caja del producto en el DOM
+          document.querySelector('.product-grid').innerHTML = document.querySelector('.product-grid').innerHTML.replace(productBox, updatedProductBox);
+          
+          // Guarda el producto en el almacenamiento local
+          let products = JSON.parse(localStorage.getItem('products')) || [];
+          products.push({ name, price });
+          localStorage.setItem('products', JSON.stringify(products));
+          
+          closeProductForm();
+      }
   } else {
-      box.innerHTML = "+";
-      box.style.backgroundColor = "#fff";
-      box.style.color = "#d32f2f";
+      alert('Por favor, ingrese el nombre y precio del producto.');
   }
 }
 
-// Simular subida de productos
-function uploadProducts() {
-  const products = document.querySelectorAll(".product-box");
-  let addedProducts = 0;
-
-  products.forEach(product => {
-      if (product.innerHTML === "✔") {
-          addedProducts++;
+// Carga los productos guardados (opcional, para mostrar al recargar)
+function loadProducts() {
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+  const productBoxes = document.querySelectorAll('.product-box');
+  products.forEach((product, index) => {
+      if (productBoxes[index]) {
+          productBoxes[index].innerHTML = `<strong>${product.name}</strong><br>${product.price}`;
+          
       }
   });
-
-  if (addedProducts > 0) {
-      alert(`Has subido ${addedProducts} producto(s).`);
-  } else {
-      alert("No has agregado ningún producto.");
-  }
 }
+
+// Subir productos (esto es solo un ejemplo de cómo podrías enviar los datos)
+function uploadProducts() {
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+  console.log('Productos Subidos:', products);
+  // Aquí se podría enviar los productos a un servidor usando fetch o AJAX
+}
+
+// Llama a la función para cargar los productos cuando se recarga la página
+window.onload = loadProducts;
 
 // Abrir y cerrar el menú desplegable
 function toggleDropdown() {
