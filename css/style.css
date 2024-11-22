@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container, .menu-container {
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Login Page */
+.login-form .input-group {
+  margin: 10px 0;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.login-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Menu Page */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e63946;
+  padding: 10px;
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.product-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product-card.red {
+  background-color: #e63946;
+  color: white;
+}
+
+.product-card.white {
+  background-color: white;
+  color: black;
+}
+
+.upload-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Container */
+.container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Logo */
+.logo img {
+  max-width: 100px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Title */
+h1 {
+  color: #e63946;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/* Login Form */
+
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #e63946;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}
+
+.options a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.login-button {
+  background-color: #e63946;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #d62828;
+}
+
+/* Signup */
+.signup {
+  font-size: 14px;
+  color: #666;
+}
+
+.signup a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
