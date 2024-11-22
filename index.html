@@ -1,40 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agro-Red Login</title>
-  <link rel="stylesheet" href="css/style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro-Red - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <img src="img/logo.png" alt="Agro-Red Logo">
+    <div class="login-container">
+        <img src="img/logo.png" alt="Agro-Red Logo" class="logo">
+        <h1>Bienvenidos</h1>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Correo" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Acceder</button>
+        </form>
+        <p><a onclick="proximamente()">¿Olvidaste tu contraseña?</a></p>
+        <p>¿Aun no tienes una cuenta? <a href="register.html">Crear una cuenta</a></p>
     </div>
-    <h1>BIENVENIDOS</h1>
-    <form id="login-form" class="login-form">
-      <div class="input-group">
-        <input type="email" id="email" placeholder="Email" required>
-      </div>
-      <div class="input-group">
-        <input type="password" id="password" placeholder="Password" required>
-      </div>
-      <button type="submit" class="login-button">Login</button>
-      <p class="signup">
-      <label>
-        <input type="checkbox">Recordarme
-      </label>
-    </p>
-      <p class="signup">
-        <a href="#">¿Olvidaste tu contraseña?</a> 
-      </p>
-      <p class="signup">
-        ¿No tienes una cuenta? <a href="#">Crea una cuenta</a>
-      </p>
-    </form>
-      
-    <script src="script/app.js"></script>
-  </div>
+    <script src="script/script.js"></script>
 </body>
 </html>
